@@ -1,0 +1,16 @@
+{
+  "name": "blogapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.14.0",
+    "mongoose": "4.6.5",
+    "pug": "2.0.0-beta6"
+  }
+}
