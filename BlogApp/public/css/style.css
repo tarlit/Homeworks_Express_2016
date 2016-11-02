@@ -3,3 +3,7 @@
     font-size: 0.9em;
     text-align: center;
 }
+
+#logout-form {
+    display: inline-block
+}

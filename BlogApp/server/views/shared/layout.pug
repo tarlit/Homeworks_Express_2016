@@ -15,9 +15,13 @@ html
                             a(href="/") Home
                         li
                             a(href="/about") About
+                    ul.nav.navbar-nav.navbar-right
                         if (currentUser)
                             li
-                                span Welcome, #{currentUser.username}!
+                                p.navbar-text Welcome, #{currentUser.username}!
+                            li                            
+                                form#logout.navbar-form(method="post" action="/users/logout")
+                                    button.btn.btn-info("javascript:document.getElementById('logout').submit()") Logout
                         else
                             li
                                 a(href="/users/register") Register
