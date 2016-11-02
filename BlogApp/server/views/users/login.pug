@@ -1,3 +1,14 @@
 extends ../shared/layout
 block main-content
-   
+   .well.well-lg
+        form(method='post' action='/users/authenticate')
+            legend Login User
+            .form-group.row
+                label.col-xs-2.col-form-label(for='username') Username
+                .col-xs-10
+                    input.form-control(type='text' name='username' id='username' placeholder='Enter Username')
+            .form-group.row
+                label.col-xs-2.col-form-label(for='password') Password
+                .col-xs-10
+                    input.form-control(type='password' name='password' id='password' placeholder='Enter Password')
+            input.btn.btn-info(type='submit' value='Login')

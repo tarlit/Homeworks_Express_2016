@@ -10,7 +10,6 @@ module.exports = (config) => {
     db.once('open', (err) => {
         if (err) {
             console.log(err)
-                // throw err
         }
 
         console.log('MongoDB ready!')

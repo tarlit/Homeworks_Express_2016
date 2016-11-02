@@ -15,8 +15,14 @@ html
                             a(href="/") Home
                         li
                             a(href="/about") About
-                        li
-                            a(href="/users/register") Register
+                        if (currentUser)
+                            li
+                                span Welcome, #{currentUser.username}!
+                        else
+                            li
+                                a(href="/users/register") Register
+                            li
+                                a(href="/users/login") Log In
 
             if globalError
                 .alert.alert-danger #{globalError}

@@ -5,15 +5,15 @@ let requiredValidationMessage = '{PATH} is required'
 
 let userSchema = mongoose.Schema({
     username: { type: String, required: requiredValidationMessage, unique: true },
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
+    firstName: { type: String, required: requiredValidationMessage },
+    lastName: { type: String, required: requiredValidationMessage },
     salt: String,
     hashedPassword: String,
     roles: [String]
 })
 
 userSchema.method({
-    authenticate: (password) => {
+    authenticate: function(password) {
         let inputHashedPassword = encryption.generateHashedPassword(this.salt, password)
         if (inputHashedPassword === this.hashedPassword) {
             return true
@@ -27,7 +27,6 @@ let User = mongoose.model('User', userSchema)
 
 module.exports.seedAdminUser = () => {
     User.find({}).then(users => {
-
         if (users.length === 0) {
             let salt = encryption.generateSalt()
             let hashedPassword = encryption.generateHashedPassword(salt, 'Admin12')
