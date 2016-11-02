@@ -1,10 +1,26 @@
 extends ../shared/layout
 block main-content
-    h1 Create new user
-    form(method="post" action="/users/create")
-        label(for="username") Username
-        br
-        input(type="text" name="username" id="username")
-        label(for="password") Password
-        br
-        input(type="password" name="password" id="password")
+    .well.well-lg
+        form(method='post', action='/users/create')
+            legend Create new User
+            .form-group.row
+                label.col-xs-2.col-form-label(for='username') Username
+                .col-xs-10
+                    input.form-control(type='text', name='username', id='username', placeholder='Enter Username')
+            .form-group.row 
+                label.col-xs-2.col-form-label(for='first-name') First Name
+                .col-xs-10
+                    input.form-control(type='text', name='firstNname', id='first-name', placeholder='Enter First Name')
+            .form-group.row
+                label.col-xs-2.col-form-label(for='last-name') Last Name
+                .col-xs-10
+                    input.form-control(type='text', name='lastNname', id='last-name', placeholder='Enter Last Name')
+            .form-group.row
+                label.col-xs-2.col-form-label(for='password') Password
+                .col-xs-10
+                    input.form-control(type='password', name='password', id='password', placeholder='Enter Password')
+            .form-group.row
+                label.col-xs-2.col-form-label(for='confirm-password') Confirm Password
+                .col-xs-10
+                    input.form-control(type='password', name='confirmPassword', id='confirm-password', placeholder='Confirm Password')
+            input.btn.btn-info(type='submit', name='submit', value='Create')

@@ -1,19 +1,5 @@
-h1 {
-    color: peru;
-}
-.container {
-    padding-left: 15%;
-}
-
-.menu {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.menu li {
-    display: inline-block;
-    margin-left: 20px;
-}
-.menu li:after {
-    content: "\00a0"
+.footer {
+    padding-bottom: 10px;
+    font-size: 0.9em;
+    text-align: center;
 }
