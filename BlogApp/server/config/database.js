@@ -19,4 +19,6 @@ module.exports = (config) => {
     db.on('error', (err) => {
         console.log('Databese error: ' + err)
     })
+
+    require('../data/User').seedAdminUser()
 }
